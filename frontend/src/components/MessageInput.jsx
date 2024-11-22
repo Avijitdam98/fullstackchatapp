@@ -48,36 +48,40 @@ const MessageInput = () => {
   };
 
   return (
-    <div className="p-4 w-full">
+    <div className="p-4 w-full bg-gray-800 rounded-b-lg shadow-lg">
+      {/* Image preview section */}
       {imagePreview && (
-        <div className="mb-3 flex items-center gap-2">
+        <div className="mb-4 flex items-center justify-between gap-2">
           <div className="relative">
             <img
               src={imagePreview}
               alt="Preview"
-              className="w-20 h-20 object-cover rounded-lg border border-zinc-700"
+              className="w-16 h-16 object-cover rounded-lg border-2 border-gray-600"
             />
             <button
               onClick={removeImage}
-              className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-base-300
-              flex items-center justify-center"
+              className="absolute top-0 right-0 bg-gray-900 text-white rounded-full p-1 hover:bg-gray-700 transition-all"
               type="button"
             >
-              <X className="size-3" />
+              <X size={16} />
             </button>
           </div>
         </div>
       )}
 
-      <form onSubmit={handleSendMessage} className="flex items-center gap-2">
-        <div className="flex-1 flex gap-2">
+      {/* Input and button form */}
+      <form onSubmit={handleSendMessage} className="flex items-center gap-4">
+        {/* Input container */}
+        <div className="flex-1 flex items-center gap-3">
           <input
             type="text"
-            className="w-full input input-bordered rounded-lg input-sm sm:input-md"
+            className="w-full p-3 bg-gray-700 text-white rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Type a message..."
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
+
+          {/* Image upload button */}
           <input
             type="file"
             accept="image/*"
@@ -85,19 +89,21 @@ const MessageInput = () => {
             ref={fileInputRef}
             onChange={handleImageChange}
           />
-
           <button
             type="button"
-            className={`hidden sm:flex btn btn-circle
-                     ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
+            className={`p-3 rounded-full transition-all ${
+              imagePreview ? "text-emerald-400" : "text-gray-400"
+            }`}
             onClick={() => fileInputRef.current?.click()}
           >
             <Image size={20} />
           </button>
         </div>
+
+        {/* Send message button */}
         <button
           type="submit"
-          className="btn btn-sm btn-circle"
+          className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition-all disabled:opacity-50"
           disabled={!text.trim() && !imagePreview}
         >
           <Send size={22} />
@@ -106,4 +112,5 @@ const MessageInput = () => {
     </div>
   );
 };
+
 export default MessageInput;
