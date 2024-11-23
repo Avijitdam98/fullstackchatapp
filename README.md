@@ -1,4 +1,3 @@
-ChatGPT
 
 ✨ Full Stack Realtime Chat App ✨
 🚀 Your ultimate real-time chat application powered by the latest web technologies!
