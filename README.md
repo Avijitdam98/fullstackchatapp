@@ -26,10 +26,6 @@ Dynamic Theme
 ![image](https://github.com/user-attachments/assets/cefd6f0e-625a-4eed-8acb-f180ff7b195c)
 Chat Page (User-to-User)
 ![image](https://github.com/user-attachments/assets/a09fe491-cde0-4d80-8036-ca74d332c203)
-Why Build This?
-💡 Perfect for learning real-time app development and enhancing your full-stack skills.
-
-✨ Let’s get started and create something amazing!
 
 
 
